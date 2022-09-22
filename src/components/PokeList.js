@@ -8,32 +8,31 @@ export const PokeList = () => {
   );
   const estado = UseFetch(currentPageUrl);
   const { cargando, data } = estado;
-  cargando ? console.log("cargando") : console.log(data.results);
 
   return (
-    <div>
-      <h1>Esta es la pagina de los pokemons</h1>
+    <section className="gift section container">
+      <h2 className="section__title">Pokedex</h2>
       {cargando ? (
         <h1>Cargando...</h1>
       ) : (
-        <div>
+        <div className="gift__container grid">
           <Item results={data.results} />
-          <div className="container m-auto">
-            <button
-              onClick={() => setCurrentPageUrl(data.previous)}
-              className="m-2 btn btn-dark"
-            >
-              Anterior
-            </button>
-            <button
-              onClick={() => setCurrentPageUrl(data.next)}
-              className="m-2 btn btn-dark"
-            >
-              Siguiente
-            </button>
-          </div>
         </div>
       )}
-    </div>
+      <div className="section__button">
+        <button
+          onClick={() => setCurrentPageUrl(data.previous)}
+          className="btn"
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => setCurrentPageUrl(data.next)}
+          className="btn"
+        >
+          Siguiente
+        </button>
+      </div>
+    </section>
   );
 };

@@ -1,75 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body,
+button,
+input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+body {
+  display: flex;
+  justify-content: center;
+  margin: 3.5rem 0 0 0;
+  background-color: #fff;
+  color: hsl(355, 4%, 35%);
+}
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(355, 4%, 15%);
+  font-weight: 600;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ================= CSS Class ================= */
+.container {
+  max-width: 968px;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.grid {
+  display: grid;
+}
+.section {
+  padding: 4.5rem 0 1rem;
+}
+.section__title {
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.section__button {
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.card {
+  position: relative;
+  background-color: white;
+  width: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+.new__overlay {
+  width: 266px;
+  height: 250px;
+  background-color: currentColor;
+  border-radius: 50%;
+  position: absolute;
+  top: -5rem;
+  left: -0.78rem;
+  z-index: 0;
+}
 .card-header {
-    color: white;
+  width: 100%;
+  display: block;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid var(--color2);
+}
+.card-body-contentimg {
+  border-radius: 50%;
+  margin-top: 2rem;
+  z-index: 1;
+}
+.card-body-contentimg img {
+  width: 150px;
+  height: 150px;
+}
+.card-body-contentimg-img {
+  padding: 20px;
+}
+.card-body-title {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+.card-body-title span {
+  color: var(--color2);
+}
+.card-body-text {
+  font-size: 1rem;
+}
+.btn {
+  display: inline-block;
+  background-color: crimson;
+  color: #fff;
+  padding: 1.15rem 2.75rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  transition: 0.3s;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-around;
+}
+.card-footer-poder {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.card-footer-poder p {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 3px 0;
+  border-radius: 20px;
+  padding: 3px 10px;
+  align-self: flex-start;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+.card-body-contentimg.bug {
+  background-color: #aedf78;
+  border: 5px solid #7edd15;
+  box-shadow: 0px -10px 20px #7edd15;
+}
+.card-footer-poder.bug p {
+  background-color: #7edd15;
+}
+.card-body-contentimg.water {
+  background-color: #7fd1ef;
+  border: 5px solid #43ccff;
+  box-shadow: 0px -10px 20px #43ccff;
+}
+.card-footer-poder.water p {
+  background-color: #43ccff;
+}
+.card-body-contentimg.grass {
+  background-color: #39edba;
+  border: 5px solid #00ca91;
+  box-shadow: 0px -10px 20px #00ca91;
+}
+.card-footer-poder.grass p {
+  background-color: #39edba;
+}
+.card-body-contentimg.fire {
+  background-color: #fcd3c6;
+  border: 5px solid #f67c55;
+  box-shadow: 0px -10px 20px #f67c55;
+}
+.card-footer-poder.fire p {
+  background-color: #f67c55;
+}
+.card-body-contentimg.normal {
+  background-color: #d9d3d3;
+  border: 5px solid #a5a5a5;
+  box-shadow: 0px -10px 20px #a5a5a5;
+}
+.card-footer-poder.normal p {
+  background-color: #a5a5a5;
+}
+.card-body-contentimg.normal {
+  background-color: #d9d3d3;
+  border: 5px solid #a5a5a5;
+  box-shadow: 0px -10px 20px #a5a5a5;
+}
+.card-footer-poder.normal p {
+  background-color: #a5a5a5;
+}
+.card-body-contentimg.poison {
+  background-color: #d081d3;
+  border: 5px solid #9f3f9f;
+  box-shadow: 0px -10px 20px #9f3f9f;
+}
+.card-footer-poder.poison p {
+  background-color: #9f3f9f;
+}
+.card-body-contentimg.fairy {
+  background-color: #f7badd;
+  border: 5px solid #ee99ac;
+  box-shadow: 0px -10px 20px #ee99ac;
+}
+.card-footer-poder.fairy p {
+  background-color: #ee99ac;
+}
+.card-body-contentimg.electric {
+  background-color: #ffe860;
+  border: 5px solid #f8d02e;
+  box-shadow: 0px -10px 20px #f8d02e;
+}
+.card-footer-poder.electric p {
+  background-color: #f8d02e;
+}
+.card-body-contentimg.ground {
+  background-color: #ffd872;
+  border: 5px solid #e0bf68;
+  box-shadow: 0px -10px 20px #e0bf68;
+}
+.card-footer-poder.ground p {
+  background-color: #e0bf68;
+}
+.card-body-contentimg.fighting {
+  background-color: #ff86a1;
+  border: 5px solid #e3355c;
+  box-shadow: 0px -10px 20px #e3355c;
+}
+.card-footer-poder.fighting p {
+  background-color: #e3355c;
+}
+.card-body-contentimg.rock {
+  background-color: #999999;
+  border: 5px solid #5e5e5e;
+  box-shadow: 0px -10px 20px #999999;
+}
+.card-footer-poder.rock p {
+  background-color: #5e5e5e;
 }
 
-.cards{
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-}
 
-.card-pokemon {
-    border: 1px solid #ccc;
-    padding: 15px;
-    position: relative;
-    border-radius: 20px;
-    height: 120px;
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 550px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .gift__container {
+    grid-template-columns: 150px;
+    justify-content: center;
+  }
+  .card {
+    margin-bottom: 2rem;
+  }
 }
-
-.imagen {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    right: -15px;
-    top: 37px;
+@media screen and (min-width: 576px) {
+  .gift__container {
+    grid-template-columns: repeat(2, 240px);
+    justify-content: center;
+    gap: 2rem;
+  }
 }
-
-.card-name {
-    text-transform: capitalize;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2rem;
+@media screen and (min-width: 767px) {
+  body {
     margin: 0;
+  }
+  .section {
+    padding: 6.5rem 0 2rem;
+  }
+  .gift__container {
+    grid-template-columns: repeat(3, 300px);
+    gap: 2.5rem;
+  }
 }
-
-.card-types {
-    display: flex;
-    flex-direction: column;
-}
-
-.card-types p{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 0 0 3px 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 3px 10px;
-    align-self: flex-start;
-    line-height: 16px;
-    text-transform: capitalize;
-}
-
-.card-id {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 5px 0;
-}
-
-.bug {
-    background: #aedf78;
-}
-
-.water {
-    background: #43ccff;
-}
-
-.grass {
-    background: #00ca91;
-}
-
-.fire {
-    background: #e95c4d;
-}
-
-.normal {
-    background: #a5a5a5;
+@media screen and (min-width: 992px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gift__container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }

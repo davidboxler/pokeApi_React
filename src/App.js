@@ -1,12 +1,10 @@
 import React from 'react'
 import './App.css'
-import { PokeList } from './components/PokeList'
+import { HomePage } from './pages/HomePage';
 
 function App() {
   return (
-    <div className='App'>
-      <PokeList />
-    </div>
+    <HomePage />
   )
 }
 
