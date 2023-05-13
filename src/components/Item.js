@@ -3,14 +3,10 @@ import { PokeItem } from "./PokeItem";
 
 export const Item = ({ results }) => {
   return (
-    <div className="container">
-      <ul className="cards">
+    <>
         {results.map((p) => (
-          <li className="card-item" key={p.name}>
-            <PokeItem url={p.url} />
-          </li>
+            <PokeItem key={p.name} url={p.url} />
         ))}
-      </ul>
-    </div>
+    </>
   );
 };

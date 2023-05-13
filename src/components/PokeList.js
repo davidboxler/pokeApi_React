@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { UseFetch } from "../services/UseFetch";
 import { Item } from "./Item";
+import Logo from "../assets/img/Pokédex_logo.png";
+import { Link } from "react-router-dom";
 
 export const PokeList = () => {
   const [currentPageUrl, setCurrentPageUrl] = useState(
@@ -8,32 +10,54 @@ export const PokeList = () => {
   );
   const estado = UseFetch(currentPageUrl);
   const { cargando, data } = estado;
-  cargando ? console.log("cargando") : console.log(data.results);
 
   return (
-    <div>
-      <h1>Esta es la pagina de los pokemons</h1>
+    <section className="gift section container">
+      <Link to={"/"}>
+        <h2 className="section__title">
+          <img src={Logo} alt="Logo_pokedex" />
+        </h2>
+      </Link>
+
       {cargando ? (
         <h1>Cargando...</h1>
       ) : (
-        <div>
+        <div className="gift__container grid">
           <Item results={data.results} />
-          <div className="container m-auto">
-            <button
-              onClick={() => setCurrentPageUrl(data.previous)}
-              className="m-2 btn btn-dark"
-            >
-              Anterior
-            </button>
-            <button
-              onClick={() => setCurrentPageUrl(data.next)}
-              className="m-2 btn btn-dark"
-            >
-              Siguiente
-            </button>
-          </div>
         </div>
       )}
-    </div>
+      <div className="section__button">
+        {data?.previous != null ? (
+          <button
+            onClick={() => setCurrentPageUrl(data.previous)}
+            className="btn"
+          >
+            Anterior
+          </button>
+        ) : (
+          <button
+            onClick={() => setCurrentPageUrl(data.previous)}
+            className="btn"
+            style={{ display: "none" }}
+          >
+            Anterior
+          </button>
+        )}
+
+        {data?.next != null ? (
+          <button onClick={() => setCurrentPageUrl(data.next)} className="btn">
+            Siguiente
+          </button>
+        ) : (
+          <button
+            onClick={() => setCurrentPageUrl(data.next)}
+            className="btn"
+            style={{ display: "none" }}
+          >
+            Siguiente
+          </button>
+        )}
+      </div>
+    </section>
   );
 };

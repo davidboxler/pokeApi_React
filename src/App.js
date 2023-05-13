@@ -1,12 +1,11 @@
 import React from 'react'
 import './App.css'
-import { PokeList } from './components/PokeList'
+// import { HomePage } from './pages/HomePage';
+import { Routing } from './routes/Routing';
 
 function App() {
   return (
-    <div className='App'>
-      <PokeList />
-    </div>
+    <Routing />
   )
 }
 
