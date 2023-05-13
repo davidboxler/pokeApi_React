@@ -15,20 +15,14 @@ export const PokeItem = ({ url }) => {
           <div className="new__overlay"></div>
           <div className="card-body">
             <div className={`card-body-contentimg ${data.types[0].type.name}`}>
-<<<<<<< HEAD
               <Link to={'/pokemon/' + data?.id}>
-=======
->>>>>>> a5f0557a84815f4e0b4764b0a2b50a3f9b2348a8
               <img
                 src={data.sprites.other.dream_world.front_default}
                 alt="pokemon"
                 className="card-body-contentimg-img"
                 width="150"
               />
-<<<<<<< HEAD
               </Link>
-=======
->>>>>>> a5f0557a84815f4e0b4764b0a2b50a3f9b2348a8
             </div>
             <h1 className="card-body-title">
               {data.name}
